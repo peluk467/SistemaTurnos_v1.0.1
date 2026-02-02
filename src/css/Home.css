@@ -1,0 +1,90 @@
+/* Contenedor principal */
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  /* Imagen de fondo (puedes cambiar la URL por una tuya local) */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  height: 70vh; /* Ocupa el 70% de la altura de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.hero-btn {
+  background-color: #3498db; /* Azul como el de la foto */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-btn:hover {
+  background-color: #2980b9;
+}
+
+/* --- CARDS SECTION --- */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  margin-top: -50px; /* Truco para que suban un poco sobre la imagen */
+  flex-wrap: wrap;
+}
+
+.card-item {
+  background: white;
+  width: 250px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.card-item:hover {
+  transform: translateY(-5px); /* Efecto de levitar al pasar el mouse */
+}
+
+.card-item .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.card-item h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card-item p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}

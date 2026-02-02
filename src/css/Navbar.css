@@ -1,0 +1,77 @@
+/* src/css/Navbar.css */
+
+.navbar {
+  display: flex;               /* Vital para separar logo y links */
+  justify-content: space-between; /* Empuja el logo a la izq y links a la der */
+  align-items: center;         /* Alinea verticalmente al centro */
+  padding: 15px 50px;          /* Espaciado interno */
+  position: absolute;          /* Para que flote sobre la imagen de fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;               /* Asegura que esté por encima de todo */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent); /* Sombra suave para leer mejor */
+  box-sizing: border-box;      /* Evita que el padding rompa el ancho */
+}
+
+.nav-brand a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-links {
+  display: flex;               /* Vital para poner los links uno al lado del otro */
+  gap: 25px;                   /* Espacio entre cada link */
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.nav-links a:hover {
+  color: #3498db;              /* Color celeste al pasar el mouse */
+}
+
+/* Estilo especial para el botón "Mi Cuenta" o "Ingresar" */
+.btn-ingresar, .btn-dashboard {
+  border: 1px solid white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+}
+
+.btn-ingresar:hover, .btn-dashboard:hover {
+  background: white;
+  color: #333 !important;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  color: #dcedff;
+  font-weight: bold;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
