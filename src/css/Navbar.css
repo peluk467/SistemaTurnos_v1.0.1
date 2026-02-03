@@ -1,32 +1,41 @@
 /* src/css/Navbar.css */
 
 .navbar {
-  display: flex;               /* Vital para separar logo y links */
-  justify-content: space-between; /* Empuja el logo a la izq y links a la der */
-  align-items: center;         /* Alinea verticalmente al centro */
-  padding: 15px 50px;          /* Espaciado interno */
-  position: absolute;          /* Para que flote sobre la imagen de fondo */
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
+  align-items: center;
+  padding: 10px 50px;           /* Espaciado interno */
+  position: absolute;           /* Flota sobre la imagen de fondo */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;               /* Asegura que esté por encima de todo */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent); /* Sombra suave para leer mejor */
-  box-sizing: border-box;      /* Evita que el padding rompa el ancho */
+  z-index: 1000;                /* Asegura que esté siempre encima de todo */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent); /* Sombra suave para leer mejor */
+  box-sizing: border-box;
 }
 
-.nav-brand a {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+/* --- ESTILOS DEL LOGO --- */
+.nav-brand {
+  display: flex;
+  align-items: center;
 }
 
+.navbar-logo {
+  height: 60px;       /* Altura controlada para que no rompa la barra */
+  width: auto;        /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5)); /* Sombra para que destaque */
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05); /* Efecto zoom suave al pasar el mouse */
+}
+
+/* --- ESTILOS DE LOS ENLACES --- */
 .nav-links {
-  display: flex;               /* Vital para poner los links uno al lado del otro */
-  gap: 25px;                   /* Espacio entre cada link */
+  display: flex;
+  gap: 25px;          /* Espacio entre cada enlace */
   align-items: center;
 }
 
@@ -36,26 +45,32 @@
   font-weight: 500;
   font-size: 1rem;
   transition: color 0.3s ease;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra negra para leer sobre fondos claros */
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a:hover {
-  color: #3498db;              /* Color celeste al pasar el mouse */
+  color: #3498db;     /* Color celeste al pasar el mouse */
 }
 
-/* Estilo especial para el botón "Mi Cuenta" o "Ingresar" */
+/* --- BOTONES ESPECIALES (Ingresar / Mi Cuenta) --- */
 .btn-ingresar, .btn-dashboard {
   border: 1px solid white;
   padding: 8px 20px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  transition: all 0.3s ease;
 }
 
 .btn-ingresar:hover, .btn-dashboard:hover {
   background: white;
-  color: #333 !important;
+  color: #333 !important; /* Texto oscuro al hacer hover */
+  text-shadow: none;
 }
 
+/* --- MENÚ DE USUARIO (Cuando está logueado) --- */
 .user-menu {
   display: flex;
   align-items: center;
@@ -63,15 +78,24 @@
 }
 
 .user-name {
-  color: #dcedff;
+  color: #dcedff; /* Celeste muy claro */
   font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .btn-logout {
   background: none;
   border: none;
-  color: #ff6b6b;
+  color: #ff6b6b; /* Rojo suave */
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  transition: color 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-logout:hover {
+  color: #ff4c4c;
+  text-decoration: underline;
 }

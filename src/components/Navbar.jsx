@@ -14,23 +14,23 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Logotipo / Nombre del Consultorio */}
+      {/* 1. LOGO (Ahora es una imagen) */}
       <div className="nav-brand">
-        <Link to="/" style={{color: 'white', textDecoration: 'none'}}>
-          CONSULTORIO BAJO LA VIÑA
+        <Link to="/">
+          {/* La ruta comienza con / porque está en la carpeta public */}
+          <img src="/logo1.png" alt="Logo Consultorio" className="navbar-logo" />
         </Link>
       </div>
 
-      {/* Enlaces de Navegación */}
+      {/* 2. ENLACES */}
       <div className="nav-links">
         <Link to="/">Inicio</Link>
         <Link to="/profesionales">Profesionales</Link>
         <Link to="/contacto">Contacto</Link>
         
-        {/* Lógica: ¿Hay usuario logueado? */}
         {user ? (
           <div className="user-menu">
-            <span className="user-name">Hola, {user.name}</span>
+            <span className="user-name">{user.name}</span>
             <Link to="/dashboard" className="btn-dashboard">Mi Cuenta</Link>
             <button onClick={handleLogout} className="btn-logout">Salir</button>
           </div>
